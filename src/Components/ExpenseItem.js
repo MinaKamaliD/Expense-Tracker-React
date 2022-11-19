@@ -1,7 +1,8 @@
 import "./ExpenseItem.css";
-
+import DateItem from "./DateItem";
 function ExpenseItem(props) {
   <p className="box__strt">Let's get started!</p>;
+
   return (
     <div>
       <div className="box">
@@ -9,7 +10,7 @@ function ExpenseItem(props) {
         <div className="container">
           <div className="container--items">
             <div className="container-items__des">
-              <p className="box__date">{props.date}</p>
+              <DateItem date={props.date}></DateItem>
               <p className="box__title">{props.title}</p>
             </div>
             <div className="container-items__price">
