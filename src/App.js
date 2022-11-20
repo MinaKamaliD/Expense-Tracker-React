@@ -1,8 +1,7 @@
 import "./App.css";
-import ExpenseItem from "./Components/ExpenseItem/ExpenseItem";
 import Expenses from "./Components/Expenses/Expenses";
 
-function App() {
+const App = () => {
   const expenses = [
     {
       id: 1,
@@ -36,6 +35,6 @@ function App() {
       <Expenses items={expenses}></Expenses>
     </div>
   );
-}
+};
 
 export default App;
