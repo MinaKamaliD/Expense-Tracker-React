@@ -28,10 +28,10 @@ const App = () => {
       price: 103.74,
     },
   ];
-
+  const addExpenseHandler = (expenses) => {};
   return (
     <div>
-      <NewExpense></NewExpense>
+      <NewExpense onAddExpense={addExpenseHandler}></NewExpense>
       <Expenses items={expenses}></Expenses>
     </div>
   );
