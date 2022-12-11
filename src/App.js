@@ -1,46 +1,50 @@
-import "./App.css";
-import Expenses from "./Components/Expenses/Expenses";
-import NewExpense from "./Components/NewExpense/NewExpense";
 import React, { useState } from "react";
+
+import NewExpense from "./components/NewExpense/NewExpense";
+import Expenses from "./components/Expenses/Expenses";
 
 const DUMMY_EXPENSES = [
   {
-    id: 1,
-    date: new Date(2022, 2, 6),
-    title: "Car insurance",
-    amount: 65,
+    id: "e1",
+    title: "Toilet Paper",
+    amount: 94.12,
+    date: new Date(2020, 7, 14),
+  },
+  { id: "e2", title: "New TV", amount: 799.49, date: new Date(2021, 2, 12) },
+  {
+    id: "e3",
+    title: "Car Insurance",
+    amount: 294.67,
+    date: new Date(2021, 2, 28),
   },
   {
-    id: 2,
-    date: new Date(2021, 0, 22),
-    title: "Toilet paper",
-    amount: 95.24,
-  },
-  {
-    id: 3,
-    date: new Date(2020, 10, 10),
-    title: "Gym fees",
-    amount: 24.95,
-  },
-  {
-    id: 4,
-    date: new Date(),
-    title: "Food",
-    amount: 103.74,
+    id: "e4",
+    title: "New Desk (Wooden)",
+    amount: 450,
+    date: new Date(2021, 5, 12),
   },
 ];
 
 const App = () => {
   const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
-  const addExpenseHandler = (expenses) => {
+
+  const addExpenseHandler = (expense) => {
     setExpenses((prevExpenses) => {
-      return [expenses, ...prevExpenses];
+      return [expense, ...prevExpenses];
     });
   };
+
+  // return React.createElement(
+  //   'div',
+  //   {},
+  //   React.createElement('h2', {}, "Let's get started!"),
+  //   React.createElement(Expenses, { items: expenses })
+  // );
+
   return (
     <div>
-      <NewExpense onAddExpense={addExpenseHandler}></NewExpense>
-      <Expenses items={expenses}></Expenses>
+      <NewExpense onAddExpense={addExpenseHandler} />
+      <Expenses items={expenses} />
     </div>
   );
 };
